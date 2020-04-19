@@ -1,4 +1,4 @@
-# static-server
-基于node的静态资源服务器
+https://github.com/ykfe/koa-generator
 
-1、 创建新分支koa-static-server  基于框架的静态资源服务
+#### 利用koa-generator 的koa脚手架搭建静态资源服务器
+
