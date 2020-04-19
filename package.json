@@ -1,0 +1,26 @@
+{
+  "name": "sunnpm",
+  "version": "2.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "bin": {
+    "sun": "src/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "koa": "^2.11.0",
+    "koa-route": "^3.2.0"
+  },
+  "dependencies": {
+    "commander": "^5.0.0",
+    "ejs": "^3.0.2",
+    "handlebars": "^4.7.6",
+    "koa-router": "^8.0.8",
+    "nodemon": "^2.0.2"
+  }
+}
