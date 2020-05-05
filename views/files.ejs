@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>files 文件展示</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <p>EJS Welcome to</p>
+    <ul>
+      <%for(let i = 0;i < files.length; i++) {%>
+           <li>
+            <a href="<%= dir%>/<%= files[i] %>">
+              <%=files[i]%>
+            </a>
+            </li>
+      <%}%>
+    </ul>
+  </body>
+</html>

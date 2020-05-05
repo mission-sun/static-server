@@ -7,12 +7,16 @@
 var app = require('../app');
 var debug = require('debug')('demo:server');
 var http = require('http');
+var chalk = require('chalk');
+const config = require('../config');
+const path = require('path');
+
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || config.port);
 // app.set('port', port);
 
 /**
@@ -25,7 +29,11 @@ var server = http.createServer(app.callback());
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, 'localhost', () => {
+  let _path = path.relative('/data/orandea/', '/data/orandea/a/b');
+  console.log('path', _path);
+  console.log('server run in', chalk.red(`${config.host}:${config.port}`));
+});
 server.on('error', onError);
 server.on('listening', onListening);
 

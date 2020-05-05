@@ -6,9 +6,13 @@ const onerror = require("koa-onerror");
 const bodyparser = require("koa-bodyparser");
 const logger = require("koa-logger");
 const Moment = require("moment");
+const serverRoute = require('./routes/server');
+const conf = require('./config');
+const path = require('path');
 
 const index = require("./routes/index");
 const users = require("./routes/users");
+global.USER_DATA = {};
 
 // error handler
 onerror(app);
@@ -49,13 +53,26 @@ app.use(async (ctx, next) => {
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 
+// 静态资源服务器,静态资源服务器需要自己设置路由
+app.use( async (ctx, next) => {
+  const filePath = path.join(conf.root,ctx.url);
+ 
+  // 
+  await next();
+  // 静态资源服务器
+  // await serverRoute(ctx, next, filePath);
+})
+
+// 模拟各种中间件
+
 // routes
 app.use(index.routes(), index.allowedMethods());
-app.use(users.routes(), users.allowedMethods());
+// app.use(users.routes(), users.allowedMethods());
 
 // error-handling
 app.on("error", (err, ctx) => {
   console.error("server error", err, ctx);
+  ctx.body = 'not find';
 });
 
 module.exports = app;
