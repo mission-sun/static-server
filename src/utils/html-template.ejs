@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+</head>
+<style>
+	.item {
+		list-style: none;
+	}
+	.item a{
+		text-decoration: none;
+	}
+.item-goback {
+	font-size: 22px;
+}
+</style>
+<body>
+		<h2><%= title %></h2>
+		<!-- <% if (url === '/') { %>
+		<% } else { %>
+			<a href=<%= `${gobackurl}` %> >....</a>
+		<% } %> -->
+			<ul>
+				<% if (url !== '/') { %>
+					<li class="item item-goback">
+						<a href=<%= `${gobackurl}` %> >....</a>
+					</li>
+					<% } %>
+				<% list.forEach(function(item){ %>
+					<li class="item">
+						<a href=<%= `${url}${item}` %> ><%= item %></a>
+						<% }); %>
+					</li>
+			</ul>
+			<!-- <% list.forEach(function(item){ %>
+			<a href=<%= `${url}${item}` %> ><%= item %></a>
+			<% }); %> -->
+</div>
+</body>
+</html>

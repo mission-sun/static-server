@@ -1,0 +1,1 @@
+console.log('我是文件B下的js文件');
