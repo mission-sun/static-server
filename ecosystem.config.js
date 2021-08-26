@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     name: 'static-serve',
-    script: './src/index',
+    script: './src/index.js',
     // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
     args: 'one two',
     instances: 1,
