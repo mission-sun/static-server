@@ -24,16 +24,11 @@ const server = http.createServer((req, res) => {
 		res.setHeader("Content-Type", 'text/html;charset=utf-8');
 	}
 	let filePath = path.join(staticPath, req.url);
-	console.log('current-file', filePath);
-
 	const _content = content(req, res, filePath);
-	// res.writeHead(200, 
-	// 	{ 'Content-Type': 'text/html;charset=utf-8'}
-	// );
 	res.end(_content);
 })
 
-server.listen('3005', () => {
-	console.log('server start is', chalk.red(3005));
+server.listen('3006', () => {
+	console.log('server start is', chalk.red(3006));
 })
 

@@ -26,9 +26,9 @@
 						<a href=<%= `${gobackurl}` %> >....</a>
 					</li>
 					<% } %>
-				<% list.forEach(function(item){ %>
+				<% list.forEach(function(item, index){ %>
 					<li class="item">
-						<a href=<%= `${url}${item}` %> ><%= item %></a>
+						<%= index%><a href=<%= `${url}${item}` %> ><%= item %></a>
 						<% }); %>
 					</li>
 			</ul>
